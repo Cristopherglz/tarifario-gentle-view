@@ -415,13 +415,6 @@ export default function TarifarioFinal() {
                 ))}
               </div>
 
-              <div className="mt-6 p-4 bg-cyan-100 border-l-4 border-cyan-600 rounded">
-                <p className="text-sm text-cyan-900">
-                  <strong>💡 Consejo:</strong> Los precios se actualizan en vivo según la divisa, el
-                  nivel de experiencia y el tipo de cliente. Tomá nota del total para compartirlo con
-                  tu cliente.
-                </p>
-              </div>
             </div>
           </Card>
         </div>
