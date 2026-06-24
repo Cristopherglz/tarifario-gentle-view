@@ -204,7 +204,9 @@ export default function TarifarioFinal() {
       <header className="bg-white/80 backdrop-blur-md border-b border-cyan-100 sticky top-0 z-40 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between gap-4">
           <div className="flex items-center gap-3 min-w-0">
-            <img src="/cdgm-logo.png" alt="CDGM" className="h-10 shrink-0 object-contain" />
+            <a href="https://cdgm.org.ar" className="shrink-0 cursor-pointer">
+              <img src="/cdgm-logo.png" alt="CDGM" className="h-10 object-contain" />
+            </a>
             <div className="min-w-0 hidden sm:block">
               <h1 className="text-base lg:text-lg font-bold text-cyan-900 truncate">Tarifario público</h1>
               <p className="text-[11px] text-cyan-600">Calculá tu presupuesto en pocos pasos</p>
