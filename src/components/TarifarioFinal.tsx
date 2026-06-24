@@ -206,7 +206,7 @@ export default function TarifarioFinal() {
           <div className="flex items-center gap-3 min-w-0">
             <img src="/cdgm-logo.png" alt="CDGM" className="h-10 shrink-0 object-contain" />
             <div className="min-w-0 hidden sm:block">
-              <h1 className="text-base lg:text-lg font-bold text-cyan-900 truncate">Tarifario para profesionales</h1>
+              <h1 className="text-base lg:text-lg font-bold text-cyan-900 truncate">Tarifario público</h1>
               <p className="text-[11px] text-cyan-600">Calculá tu presupuesto en pocos pasos</p>
             </div>
           </div>
@@ -346,7 +346,7 @@ export default function TarifarioFinal() {
 
               {/* Resumen de tarifa efectiva */}
               <div className="mt-5 pt-4 border-t border-cyan-100">
-                <p className="text-[10px] text-cyan-600 font-semibold uppercase tracking-wide mb-1">Tu tarifa por hora</p>
+                <p className="text-[10px] text-cyan-600 font-semibold uppercase tracking-wide mb-1">TARIFA DEL PROFESIONAL POR HORA</p>
                 <p className="text-lg font-bold text-cyan-900">
                   ${formatearMoneda(calcularPrecio(valorHoraEnDivisa), 2)} <span className="text-xs text-cyan-600">{divisa}</span>
                 </p>
