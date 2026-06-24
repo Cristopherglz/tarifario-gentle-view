@@ -226,16 +226,13 @@ export default function TarifarioFinal() {
       </header>
 
       <div className="max-w-7xl mx-auto px-4 pt-6">
-        {/* Hero compacto */}
+        {/* Hero */}
         <div className="text-center mb-8">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-100 text-cyan-700 text-xs font-semibold mb-3">
-            <Sparkles size={14} /> Calculadora profesional
-          </div>
           <h2 className="text-3xl md:text-5xl font-bold bg-gradient-to-r from-cyan-900 via-cyan-700 to-cyan-600 bg-clip-text text-transparent">
             Armá tu presupuesto a medida
           </h2>
           <p className="text-cyan-700/80 text-sm md:text-base mt-2 max-w-2xl mx-auto">
-            Configurá tus parámetros, elegí los servicios y obtené el total al instante.
+            Consultá los valores aproximados de los servicios de diseño gráfico en Misiones.
           </p>
         </div>
 
