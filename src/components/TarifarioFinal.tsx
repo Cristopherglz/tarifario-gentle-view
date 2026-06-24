@@ -603,7 +603,7 @@ export default function TarifarioFinal() {
 
                   {/* Total */}
                   <div className="bg-gradient-to-r from-cyan-600 to-cyan-700 p-5 rounded-xl text-white">
-                    <div className="flex justify-between items-center flex-wrap gap-2">
+                    <div className="flex justify-between items-center flex-wrap gap-3">
                       <div>
                         <p className="text-xs uppercase tracking-wide text-cyan-100 font-semibold">Total estimado</p>
                         <p className="text-[11px] text-cyan-100/80">Incluye experiencia y tipo de cliente</p>
@@ -612,6 +612,12 @@ export default function TarifarioFinal() {
                         ${formatearMoneda(totalPresupuesto, 2)} <span className="text-sm font-semibold opacity-80">{divisa}</span>
                       </span>
                     </div>
+                    <button
+                      onClick={imprimirPresupuesto}
+                      className="mt-4 w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-white text-cyan-700 hover:bg-cyan-50 rounded-lg font-bold text-sm shadow transition"
+                    >
+                      <Printer size={16} /> Imprimir presupuesto
+                    </button>
                   </div>
                 </>
               )}
