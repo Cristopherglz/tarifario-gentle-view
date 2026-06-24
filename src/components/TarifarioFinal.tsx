@@ -309,7 +309,7 @@ export default function TarifarioFinal() {
               {/* Experiencia */}
               <div className="mb-5">
                 <div className="flex items-center justify-between mb-2">
-                  <label className="text-xs font-bold text-cyan-700 uppercase tracking-wide">Tu Experiencia</label>
+                  <label className="text-xs font-bold text-cyan-700 uppercase tracking-wide">EXPERIENCIA DEL PROFESIONAL</label>
                   <span className="text-[10px] font-bold text-white bg-cyan-600 px-2 py-0.5 rounded-full">
                     x{MULTIPLICADORES_EXPERIENCIA[experiencia] || 1}
                   </span>
