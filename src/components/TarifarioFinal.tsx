@@ -116,6 +116,88 @@ export default function TarifarioFinal() {
     setMostrarPresupuestoMobile(false);
   };
 
+  const imprimirPresupuesto = () => {
+    if (itemsPresupuesto.length === 0) return;
+    const fecha = new Date().toLocaleDateString('es-AR', { day: '2-digit', month: 'long', year: 'numeric' });
+    const expLabel: Record<string, string> = { junior: 'Junior', semiSenior: 'Semi-Senior', senior: 'Senior' };
+    const cliLabel: Record<string, string> = { A: 'Cliente A / Grande', B: 'Cliente B / Mediana', C: 'Cliente C / Pequeña' };
+    const filas = itemsPresupuesto
+      .map(
+        (i) => `
+        <tr>
+          <td>
+            <div class="nombre">${i.nombre}</div>
+            <div class="cat">${i.categoria}</div>
+          </td>
+          <td class="c">${i.horas}</td>
+          <td class="r">$${formatearMoneda(i.precioHora, 2)}</td>
+          <td class="r b">$${formatearMoneda(i.subtotal, 2)}</td>
+        </tr>`,
+      )
+      .join('');
+
+    const html = `<!doctype html><html lang="es"><head><meta charset="utf-8"/>
+<title>Presupuesto CDGM - ${fecha}</title>
+<style>
+  *{box-sizing:border-box}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;color:#0e7490;margin:32px;}
+  header{display:flex;align-items:center;justify-content:space-between;border-bottom:3px solid #0891b2;padding-bottom:16px;margin-bottom:24px;}
+  header img{height:56px;object-fit:contain}
+  h1{margin:0;color:#164e63;font-size:22px}
+  .fecha{color:#0891b2;font-size:13px;margin-top:4px}
+  .params{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:24px}
+  .param{background:#ecfeff;border:1px solid #a5f3fc;border-radius:8px;padding:10px 12px}
+  .param .l{font-size:10px;text-transform:uppercase;color:#0891b2;font-weight:700;letter-spacing:.5px}
+  .param .v{font-size:14px;color:#164e63;font-weight:700;margin-top:2px}
+  table{width:100%;border-collapse:collapse;margin-bottom:24px;font-size:13px}
+  thead{background:#cffafe}
+  th{text-align:left;padding:10px;color:#164e63;font-size:11px;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid #0891b2}
+  td{padding:10px;border-bottom:1px solid #e0f2fe;color:#164e63;vertical-align:top}
+  td.c{text-align:center}
+  td.r{text-align:right}
+  td.b{font-weight:700}
+  .nombre{font-weight:600}
+  .cat{font-size:11px;color:#0891b2;margin-top:2px}
+  th:nth-child(2),th:nth-child(3),th:nth-child(4){text-align:right}
+  th:nth-child(2){text-align:center}
+  .total{background:linear-gradient(135deg,#0891b2,#0e7490);color:#fff;padding:18px 22px;border-radius:10px;display:flex;justify-content:space-between;align-items:center}
+  .total .l{font-size:12px;text-transform:uppercase;letter-spacing:1px;opacity:.85}
+  .total .v{font-size:26px;font-weight:800}
+  footer{margin-top:32px;text-align:center;font-size:11px;color:#0891b2;border-top:1px solid #cffafe;padding-top:12px}
+  @media print{body{margin:16mm}@page{margin:0}}
+</style></head>
+<body>
+  <header>
+    <img src="/cdgm-logo.png" alt="CDGM"/>
+    <div style="text-align:right">
+      <h1>Presupuesto profesional</h1>
+      <div class="fecha">${fecha}</div>
+    </div>
+  </header>
+  <div class="params">
+    <div class="param"><div class="l">Divisa</div><div class="v">${divisa}</div></div>
+    <div class="param"><div class="l">Valor hora efectivo</div><div class="v">$${formatearMoneda(calcularPrecio(valorHoraEnDivisa), 2)}</div></div>
+    <div class="param"><div class="l">Experiencia</div><div class="v">${expLabel[experiencia] || experiencia}</div></div>
+    <div class="param"><div class="l">Tipo de cliente</div><div class="v">${cliLabel[tipoCliente] || tipoCliente}</div></div>
+  </div>
+  <table>
+    <thead><tr><th>Descripción</th><th>Horas</th><th>Precio/Hora</th><th>Subtotal</th></tr></thead>
+    <tbody>${filas}</tbody>
+  </table>
+  <div class="total">
+    <div><div class="l">Total estimado</div><div style="font-size:11px;opacity:.8">Incluye experiencia y tipo de cliente</div></div>
+    <div class="v">$${formatearMoneda(totalPresupuesto, 2)} ${divisa}</div>
+  </div>
+  <footer>Presupuesto generado con el Tarifario CDGM · Los valores son estimativos</footer>
+  <script>window.onload=()=>{setTimeout(()=>{window.print();},300);}</script>
+</body></html>`;
+
+    const w = window.open('', '_blank', 'width=900,height=1000');
+    if (!w) return;
+    w.document.write(html);
+    w.document.close();
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-cyan-50 to-slate-100 pb-24 lg:pb-8">
       {/* Top Bar */}
