@@ -1,5 +1,5 @@
 import { useState, useMemo, useEffect } from 'react';
-import { Trash2, Plus, Check, ArrowUp, MessageSquare, Search, Minus, ShoppingCart, X, Sparkles, Printer } from 'lucide-react';
+import { Trash2, Plus, Check, ArrowUp, MessageSquare, Search, Minus, ShoppingCart, X, Printer } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import {
@@ -632,14 +632,14 @@ export default function TarifarioFinal() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {[
-                  { n: 1, t: 'Seleccioná la Divisa', d: 'Elegí si trabajarás en USD (Dólares) o ARS (Pesos Argentinos). Esta selección afectará todos los cálculos.' },
-                  { n: 2, t: 'Revisá el Valor Hora', d: 'En ARS se utiliza el valor mínimo recomendado. En USD podés ingresar el tuyo. Este será el precio base para calcular los servicios.' },
-                  { n: 3, t: 'Indicá tu Experiencia', d: 'Seleccioná tu nivel (Junior, Semi-Senior o Senior). Esto aplica un multiplicador al precio base.' },
-                  { n: 4, t: 'Seleccioná el Tipo de Cliente', d: 'Elegí entre Cliente A (Grande), B (Mediana) o C (Pequeña). Esto ajusta el precio según la magnitud del cliente.' },
-                  { n: 5, t: 'Buscá y Elegí los Servicios', d: 'Usá el buscador o las categorías para filtrar y hacé clic en "+ Agregar" para sumar cada servicio al presupuesto.' },
-                  { n: 6, t: 'Ajustá las Horas', d: 'Usá los botones + y − para modificar la cantidad de horas (respetando el mínimo). El subtotal se recalcula automáticamente.' },
-                  { n: 7, t: 'Eliminá lo que no necesites', d: 'Usá el botón de la papelera para quitar cualquier servicio del presupuesto.' },
-                  { n: 8, t: 'Revisá el Total', d: 'El total final aparece debajo de la tabla, en la divisa seleccionada y ya con todos los multiplicadores aplicados.' },
+                  { n: 1, t: 'Seleccioná la divisa', d: 'Elegí si querés ver los precios en pesos argentinos (ARS) o en dólares estadounidenses (USD).' },
+                  { n: 2, t: 'Revisá el valor hora', d: 'Es el valor base que se utiliza para calcular cada servicio. En ARS se muestra el mínimo recomendado para diseñadores en Misiones.' },
+                  { n: 3, t: 'Elegí la experiencia del profesional', d: 'Seleccioná entre Junior, Semi-Senior o Senior. A mayor experiencia, el precio refleja mayor expertise y calidad.' },
+                  { n: 4, t: 'Seleccioná el tipo de contratante', d: 'Indicá el tamaño de tu proyecto o empresa (A, B o C) para ajustar el cálculo según la magnitud del trabajo.' },
+                  { n: 5, t: 'Buscá los servicios', d: 'Usá el buscador o las categorías para encontrar rápidamente lo que necesitás contratar.' },
+                  { n: 6, t: 'Agregá servicios al presupuesto', d: 'Hacé clic en "+ Agregar" para sumar cada servicio y armar tu lista personalizada.' },
+                  { n: 7, t: 'Ajustá las horas', d: 'Modificá la cantidad de horas con los botones + y − para ajustar el presupuesto a tu necesidad real.' },
+                  { n: 8, t: 'Revisá el total y exportá', d: 'El total estimado aparece al final con todos los parámetros aplicados. Podés imprimir el presupuesto para compartirlo.' },
                 ].map((paso) => (
                   <div
                     key={paso.n}
