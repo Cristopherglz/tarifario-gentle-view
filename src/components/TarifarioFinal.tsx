@@ -1,5 +1,5 @@
 import { useState, useMemo, useEffect } from 'react';
-import { Trash2, Plus, Check, ArrowUp, MessageSquare, Search, Minus, ShoppingCart, X, Sparkles } from 'lucide-react';
+import { Trash2, Plus, Check, ArrowUp, MessageSquare, Search, Minus, ShoppingCart, X, Sparkles, Printer } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import {
