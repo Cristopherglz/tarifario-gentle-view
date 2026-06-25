@@ -345,7 +345,7 @@ export default function TarifarioFinal() {
 
               {/* Resumen de tarifa efectiva */}
               <div className="mt-5 pt-4 border-t border-cyan-100">
-                <p className="text-[10px] text-cyan-600 font-semibold uppercase tracking-wide mb-1">TARIFA DEL PROFESIONAL POR HORA</p>
+                <p className="text-[10px] text-cyan-600 font-semibold uppercase tracking-wide mb-1">TARIFA APROXIMADA POR HORA</p>
                 <p className="text-lg font-bold text-cyan-900">
                   ${formatearMoneda(calcularPrecio(valorHoraEnDivisa), 2)} <span className="text-xs text-cyan-600">{divisa}</span>
                 </p>
